@@ -1,0 +1,18 @@
+mongodb:
+    image: mongo:3.0.7
+    ports:
+     - "27017:27017"
+
+yremote:
+    image: yremote:latest
+    links:
+     - mongodb
+    ports:
+     - "3000:3000"
+
+nginx:
+    image: yremote-nginx:latest
+    ports:
+     - "80:80"
+     - "443:443"
+
