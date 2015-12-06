@@ -16,12 +16,12 @@ then
 fi
 echo "WORKSPACE=$WORKSPACE"
 
-echo "Build yremote-nginx image for version ${YR_VERSION}"
-cd ${WORKSPACE}/yremote-nginx
-docker build -t ${DOCKER_REGISTRY}/yremote-nginx:${YR_VERSION} .
-docker push ${DOCKER_REGISTRY}/yremote-nginx:${YR_VERSION}
-docker tag -f ${DOCKER_REGISTRY}/yremote-nginx:${YR_VERSION} ${DOCKER_REGISTRY}/yremote-nginx:latest-not-tested
-docker push ${DOCKER_REGISTRY}/yremote-nginx:latest-not-tested
+echo "Build nginx image for version ${YR_VERSION}"
+cd ${WORKSPACE}/nginx
+docker build -t ${DOCKER_REGISTRY}/nginx:${YR_VERSION} .
+docker push ${DOCKER_REGISTRY}/nginx:${YR_VERSION}
+docker tag -f ${DOCKER_REGISTRY}/nginx:${YR_VERSION} ${DOCKER_REGISTRY}/nginx:latest-not-tested
+docker push ${DOCKER_REGISTRY}/nginx:latest-not-tested
 
 echo "Build yremote image for version ${YR_VERSION}"
 cd ${WORKSPACE}/yremote
