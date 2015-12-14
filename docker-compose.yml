@@ -1,17 +1,20 @@
 mongodb:
-    image: mongo:3.0.7
+    image: mongo:latest
+    container_name: mongodb
     ports:
      - "27017:27017"
 
 yremote:
-    image: yremote:latest
+    image: dreg.tikalknowledge.com:5000/yremote:latest
+    container_name: yremote
     links:
-     - mongodb
+     - mongodb:mongodb
     ports:
      - "3000:3000"
 
-nginx:
-    image: yremote-nginx:latest
+ynginx:
+    image: dreg.tikalknowledge.com:5000/yremote-nginx:latest
+    container_name: ynginx
     ports:
      - "80:80"
      - "443:443"
