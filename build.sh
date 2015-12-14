@@ -19,7 +19,7 @@ echo "WORKSPACE=$WORKSPACE"
 echo "Build ynginx image for version ${YR_VERSION}"
 cd ${WORKSPACE}/ynginx
 docker build -t ${DOCKER_REGISTRY}/yremote/ynginx:${YR_VERSION} .
-docker push ${DOCKER_REGISTRY}/yremote//ynginx:${YR_VERSION}
+docker push ${DOCKER_REGISTRY}/yremote/ynginx:${YR_VERSION}
 docker tag -f ${DOCKER_REGISTRY}/yremote/ynginx:${YR_VERSION} ${DOCKER_REGISTRY}/yremote/ynginx:latest-not-tested
 docker push ${DOCKER_REGISTRY}/yremote/ynginx:latest-not-tested
 echo
