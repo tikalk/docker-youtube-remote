@@ -13,7 +13,7 @@ yremote:
      - "3000:3000"
 
 ynginx:
-    image: dreg.tikalknowledge.com:5000/yremote-nginx:latest
+    image: dreg.tikalknowledge.com:5000/ynginx:latest
     container_name: ynginx
     ports:
      - "80:80"
