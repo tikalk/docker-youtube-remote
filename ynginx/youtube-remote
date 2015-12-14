@@ -1,14 +1,14 @@
 # the IP(s) on which your node server is running. I chose port 3000.
-upstream youtube-remote {
-    server yr-web:3000;
+upstream yremote {
+    server yremote:3000;
 }
 
 # the nginx server instance
 server {
     listen 81;
-    server_name nginx/youtube-remote;
-    access_log /var/log/nginx/youtube-remote.log;
+    server_name nginx/yremote;
+    access_log /var/log/nginx/yremote.log;
 
-    proxy_pass http://youtube-remote/;
+    proxy_pass http://yremote/;
   }
 }
