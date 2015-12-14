@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_REGISTRY=xx:5000
+DOCKER_REGISTRY=dreg.tikalknowledge.com:5000
 
 
 if [ -z YR_VERSION ]
