@@ -6,9 +6,8 @@ upstream yremote {
 # the nginx server instance
 server {
     listen 81;
-    server_name nginx/yremote;
-    access_log /var/log/nginx/yremote.log;
 
-    proxy_pass http://yremote/;
+	location / {
+    proxy_pass http://yremote;
   }
 }
