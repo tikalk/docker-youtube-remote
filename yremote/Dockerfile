@@ -8,6 +8,9 @@ RUN cd /opt && git clone https://github.com/assafg/youtube-remote/ && \
 
 WORKDIR /opt/youtube-remote
 
+COPY test.sh /opt/youtube-remote/sanity_test.sh
+RUN chmod +x /opt/youtube-remote/sanity_test.sh
+
 ENV MONGO_DB_CS mongodb
 
 EXPOSE 3000
