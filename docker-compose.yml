@@ -15,6 +15,8 @@ yremote:
 ynginx:
     image: dreg.tikalknowledge.com:5000/yremote/ynginx:${YR_VERSION}
     container_name: ynginx
+    links:
+     - yremote:yremote
     ports:
      - "80:80"
      - "443:443"
