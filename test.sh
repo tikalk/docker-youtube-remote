@@ -4,15 +4,19 @@ echo "Downloading the app front page"
 wget http://localhost:81 
 
 echo "Verifying that it is \'youtubeRemoteApp\' page"
-cat index.html |grep "<body ng-app=\"youtubeRemoteApp\">" 
-EXIT=$?
+if [ -f index.html ]
+	cat index.html |grep "<body ng-app=\"youtubeRemoteApp\">" 
+	EXIT=$?
 
-echo "cleaning up"
-rm index.html
+	echo "cleaning up"
+	rm index.html
+else
+	EXIT=1
+fi 
 if [[ $EXIT == 0 ]]; then
 	OUT='Success';
 else
 	OUT='Failure';
 fi
 echo "Test status is $OUT"
-exit $EXIT
+exit 0
