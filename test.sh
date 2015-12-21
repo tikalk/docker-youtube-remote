@@ -1,14 +1,14 @@
 #!/bin/bash 
 
 echo "Downloading the app front page"
-wget -o /tmp/index.html http://localhost:81 &1> /dev/null
+wget -o index.html http://localhost:81 
 
 echo "Verifying that it is \'youtubeRemoteApp\' page"
-cat /tmp/index.html |grep "<body ng-app=\"youtubeRemoteApp\">" > /dev/null 
+cat index.html |grep "<body ng-app=\"youtubeRemoteApp\">" 
 EXIT=$?
 
 echo "cleaning up"
-rm /tmp/index.html
+rm index.html
 if [[ $EXIT == 0 ]]; then
 	OUT='Success';
 else
