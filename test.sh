@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 echo "Downloading the app front page"
-wget -o index.html http://localhost:81 
+wget http://localhost:81 
 
 echo "Verifying that it is \'youtubeRemoteApp\' page"
 cat index.html |grep "<body ng-app=\"youtubeRemoteApp\">" 
