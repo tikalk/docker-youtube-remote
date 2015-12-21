@@ -9,7 +9,7 @@ EXIT=$?
 
 echo "cleaning up"
 rm /tmp/index.html
-if [[ $EXIT != 0 ]]; then
+if [[ $EXIT == 0 ]]; then
 	OUT='Success';
 else
 	OUT='Failure';
