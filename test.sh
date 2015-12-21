@@ -4,7 +4,7 @@ echo "Downloading the app front page"
 wget http://localhost:81 
 
 echo "Verifying that it is \'youtubeRemoteApp\' page"
-if [ -f index.html ]
+if [ -f index.html ]; then
 	cat index.html |grep "<body ng-app=\"youtubeRemoteApp\">" 
 	EXIT=$?
 
