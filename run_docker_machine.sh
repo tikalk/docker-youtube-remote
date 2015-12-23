@@ -50,9 +50,9 @@ fi
 echo "Run $(docker-machine env ${MACHINE_NAME})"
 eval "$(docker-machine env ${MACHINE_NAME})"
 
-DM_IP=`docker-machine ip ${MACHINE_NAME}`
-
 # Workaround for docker-machine bug with --engine-env
 sed -i -- 's/\$YR_VERSION/'${YR_VERSION}'/g' docker-compose.yml
 
 docker-compose up -d
+
+return ${MACHINE_NAME}
