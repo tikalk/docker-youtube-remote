@@ -1,0 +1,24 @@
+mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+     - "27017:27017"
+
+yremote:
+    build: yremote/.
+    container_name: yremote
+    links:
+     - mongodb:mongodb
+    ports:
+     - "3000:3000"
+
+ynginx:
+    build: ynginx/.
+    container_name: ynginx
+    links:
+     - yremote:yremote
+    ports:
+     - "80:80"
+     - "443:443"
+     - "81:81"
+
