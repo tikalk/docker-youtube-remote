@@ -28,7 +28,7 @@ if [ "$DOCKER_MACHINE_DRIVER" == "aws" ];then
 	fi
 	
 	# Configuration file for aws cli
-	export AWS_CONFIG_FILE=~/.aws/aws_config
+	export AWS_CONFIG_FILE=~/.aws/aws_dm_config
 	
 	export AWS_INSTANCE_TYPE=m3.large
 	
