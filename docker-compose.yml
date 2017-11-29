@@ -8,7 +8,7 @@ services:
        - "27017:27017"
 
   yremote:
-      image: localhost:5000/yremote/yremote:$YR_VERSION
+      image: yremote:$YR_VERSION
       container_name: yremote
       depends_on:
        - mongodb
@@ -16,7 +16,7 @@ services:
        - "3000:3000"
 
   ynginx:
-      image: localhost:5000/yremote/ynginx:$YR_VERSION
+      image: ynginx:$YR_VERSION
       container_name: ynginx
       depends_on:
        - yremote
