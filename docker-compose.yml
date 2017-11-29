@@ -5,7 +5,7 @@ mongodb:
      - "27017:27017"
 
 yremote:
-    image: dreg.tikalknowledge.com:5000/yremote/yremote:$YR_VERSION
+    image: localhost:5000/yremote/yremote:$YR_VERSION
     container_name: yremote
     links:
      - mongodb:mongodb
@@ -13,7 +13,7 @@ yremote:
      - "3000:3000"
 
 ynginx:
-    image: dreg.tikalknowledge.com:5000/yremote/ynginx:$YR_VERSION
+    image: localhost:5000/yremote/ynginx:$YR_VERSION
     container_name: ynginx
     links:
      - yremote:yremote
@@ -21,4 +21,3 @@ ynginx:
      - "80:80"
      - "443:443"
      - "81:81"
-
