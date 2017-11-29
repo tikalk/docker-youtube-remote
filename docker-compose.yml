@@ -1,23 +1,26 @@
-mongodb:
-    image: mongo:latest
-    container_name: mongodb
-    ports:
-     - "27017:27017"
+version: "3"
+services:
 
-yremote:
-    image: localhost:5000/yremote/yremote:$YR_VERSION
-    container_name: yremote
-    links:
-     - mongodb:mongodb
-    ports:
-     - "3000:3000"
+  mongodb:
+      image: mongo:latest
+      container_name: mongodb
+      ports:
+       - "27017:27017"
 
-ynginx:
-    image: localhost:5000/yremote/ynginx:$YR_VERSION
-    container_name: ynginx
-    links:
-     - yremote:yremote
-    ports:
-     - "80:80"
-     - "443:443"
-     - "81:81"
+  yremote:
+      image: localhost:5000/yremote/yremote:$YR_VERSION
+      container_name: yremote
+      depends_on:
+       - mongodb
+      ports:
+       - "3000:3000"
+
+  ynginx:
+      image: localhost:5000/yremote/ynginx:$YR_VERSION
+      container_name: ynginx
+      depends_on:
+       - yremote
+      ports:
+       - "80:80"
+       - "443:443"
+       - "81:81"
